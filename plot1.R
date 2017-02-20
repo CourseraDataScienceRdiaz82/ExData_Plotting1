@@ -24,6 +24,5 @@ hist(desiredDataset$Global_active_power,
      main="Global Active Power")
 
 #Save the plot to a png file
-dir.create(file.path("./", "output_plots"), showWarnings = FALSE)
-dev.copy(png,file="output_plots/plot1.png", width=480,height=480)
+dev.copy(png,file="plot1.png", width=480,height=480)
 dev.off()
