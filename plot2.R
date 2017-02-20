@@ -19,12 +19,12 @@ desiredDataset<- within(desiredDataset, { Timestamp=strptime(paste(Date,Time),fo
 desiredDataset<-subset(desiredDataset, select=-c(Date,Time))
 desiredDataset <- desiredDataset[colnames(desiredDataset)[c(8,1:7)]]
 
-#Create the histogram for Global Active Power variable
-hist(desiredDataset$Global_active_power, 
-     col="red", 
-     xlab="Global Active Power (kilowatts)", 
-     main="Global Active Power")
+#plot line graph for Global Active Power.
+plot(desiredDataset$Timestamp,desiredDataset$Global_active_power,
+     xlab="",
+     ylab="Global Active Power (kilowatts)", 
+     type = "l")
 
 #Save the plot to a png file
-dev.copy(png,file="plot1.png", width=480,height=480)
+dev.copy(png,file="plot2.png", width=480,height=480)
 dev.off()
